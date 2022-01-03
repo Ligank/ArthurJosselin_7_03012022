@@ -1,0 +1,31 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1440px;
+  margin: auto;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.figure_image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 42px;
+}
+
+.figure_image .Logo {
+  width: 268px;
+  height: 93px;
+}
+/*# sourceMappingURL=main.css.map */
