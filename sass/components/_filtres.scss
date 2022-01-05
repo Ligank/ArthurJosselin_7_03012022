@@ -1,0 +1,106 @@
+.recherche_tag {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    margin-top: 25px;
+    .tag_selectionne {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        .tag {
+            display: flex;
+            justify-content: space-around;
+            margin: 7px;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+            cursor: default;
+            .close {
+                margin-left: 13px;
+                align-self: center;
+                vertical-align: middle;
+                cursor: pointer;
+            }
+            .close:hover {
+                transform: scale(1.05);
+            }
+        }
+        .tag:hover {
+            transform: scale(1.02);
+        }
+    }
+    .tag_liste {
+        display: flex;
+        margin-top: 10px;
+        .menu_ferme {
+            width: 150px;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            margin: 7px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            .fleche_bas {
+                align-self: center;
+                vertical-align: middle;
+            }
+        }
+        .menu_ferme:hover {
+            transform: scale(1.02);
+        }
+        .menu_ouvert {
+            max-width: 667px;
+            min-width: 120px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            margin: 7px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            .recherche_tag {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+                .input_tag {
+                    border: none;
+                    outline: none;
+                    min-width: 220px;
+                    color: white;
+                    font-size: 18px;
+                    margin-bottom: 26px;
+                }
+                .fleche_haut {
+                    cursor: pointer;
+                }
+            }
+            .filtre_tag {
+                font-size: 17px;
+                ul {
+                    list-style: none;
+                    display: flex;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+                    li {
+                        width: 33%;
+                        min-width: 180px;
+                        margin-bottom: 10px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tag_ingredient, .menu_ingredients_ferme, .menu_ingredients_ouvert, .input_tag_ingredients {
+    background-color: #3282F7;
+}
+.tag_appareil, .menu_appareil_ferme, .menu_appareils_ouvert, .input_tag_appareils {
+    background-color: #68D9A4;
+}
+.tag_ustensiles, .menu_ustensiles_ferme, .menu_ustensiles_ouvert, .input_tag_ustensiles {
+    background-color: #ED6454;
+}

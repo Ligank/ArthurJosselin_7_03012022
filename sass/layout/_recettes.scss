@@ -1,0 +1,45 @@
+.liste_recettes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 92%;
+    margin: auto;
+    margin-top: 30px;
+    .recette {
+        width: 30%;
+        height: 364px;
+        .image {
+            background-color: #C7BEBE;
+            width: 100%;
+            height: 178px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .recette_indications {
+            display: flex;
+            flex-direction: column;
+            background-color: #E7E7E7;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding: 20px;
+            .titre_temps {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            .ingredients_indications {
+                display: flex;
+                justify-content: space-between;
+                .ingredients {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .indications {
+                    width: 50%;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}

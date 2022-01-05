@@ -1,9 +1,36 @@
-.figure_image {
+header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 42px;
-    .Logo {
-        width: 268px;
-        height: 93px;
+    .figure_image {
+        display: flex;
+        justify-content: center;
+        margin: 42px 0 20px 0;
+        .Logo {
+            width: 268px;
+            height: 93px;
+        }
+    }
+    .recherche {
+        width: 90%;
+        height: 69px;
+        display: flex;
+        justify-content: center;
+        border-radius: 5px;
+        margin: auto;
+        background-color: #E7E7E7;
+        .recherche_barre {
+            border: none;
+            outline: none;
+            background-color: #E7E7E7;
+            width: 95%;
+        }
+        .loupe {
+            font-size: 30px;
+            align-self: center;
+            vertical-align: middle;
+        }
     }
 }
+
+

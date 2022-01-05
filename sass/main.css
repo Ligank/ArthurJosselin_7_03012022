@@ -10,22 +10,356 @@ body {
   margin: auto;
 }
 
-body {
-  font-family: 'DM Sans', sans-serif;
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
 }
 
-.figure_image {
+body {
+  font-family: 'lato', sans-serif;
+}
+
+.recherche_barre {
+  color: #000000;
+  font-size: 18px;
+  padding-left: 22px;
+}
+
+.tag {
+  font-size: 17px;
+}
+
+.menu_ferme, .menu_ouvert {
+  font-size: 22px;
+}
+
+.input_tag::-webkit-input-placeholder {
+  color: whitesmoke;
+  opacity: 0.5;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.input_tag:-ms-input-placeholder {
+  color: whitesmoke;
+  opacity: 0.5;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.input_tag::-ms-input-placeholder {
+  color: whitesmoke;
+  opacity: 0.5;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.input_tag::placeholder {
+  color: whitesmoke;
+  opacity: 0.5;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.recherche_tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.recherche_tag .tag_selectionne {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.recherche_tag .tag_selectionne .tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 7px;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: default;
+}
+
+.recherche_tag .tag_selectionne .tag .close {
+  margin-left: 13px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.recherche_tag .tag_selectionne .tag .close:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.recherche_tag .tag_selectionne .tag:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.recherche_tag .tag_liste {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+}
+
+.recherche_tag .tag_liste .menu_ferme {
+  width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+  margin: 7px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.recherche_tag .tag_liste .menu_ferme .fleche_bas {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  vertical-align: middle;
+}
+
+.recherche_tag .tag_liste .menu_ferme:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.recherche_tag .tag_liste .menu_ouvert {
+  max-width: 667px;
+  min-width: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  margin: 7px;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+.recherche_tag .tag_liste .menu_ouvert .recherche_tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.recherche_tag .tag_liste .menu_ouvert .recherche_tag .input_tag {
+  border: none;
+  outline: none;
+  min-width: 220px;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 26px;
+}
+
+.recherche_tag .tag_liste .menu_ouvert .recherche_tag .fleche_haut {
+  cursor: pointer;
+}
+
+.recherche_tag .tag_liste .menu_ouvert .filtre_tag {
+  font-size: 17px;
+}
+
+.recherche_tag .tag_liste .menu_ouvert .filtre_tag ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.recherche_tag .tag_liste .menu_ouvert .filtre_tag ul li {
+  width: 33%;
+  min-width: 180px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.tag_ingredient, .menu_ingredients_ferme, .menu_ingredients_ouvert, .input_tag_ingredients {
+  background-color: #3282F7;
+}
+
+.tag_appareil, .menu_appareil_ferme, .menu_appareils_ouvert, .input_tag_appareils {
+  background-color: #68D9A4;
+}
+
+.tag_ustensiles, .menu_ustensiles_ferme, .menu_ustensiles_ouvert, .input_tag_ustensiles {
+  background-color: #ED6454;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .figure_image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 42px;
+  margin: 42px 0 20px 0;
 }
 
-.figure_image .Logo {
+header .figure_image .Logo {
   width: 268px;
   height: 93px;
+}
+
+header .recherche {
+  width: 90%;
+  height: 69px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 5px;
+  margin: auto;
+  background-color: #E7E7E7;
+}
+
+header .recherche .recherche_barre {
+  border: none;
+  outline: none;
+  background-color: #E7E7E7;
+  width: 95%;
+}
+
+header .recherche .loupe {
+  font-size: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  vertical-align: middle;
+}
+
+.liste_recettes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 92%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.liste_recettes .recette {
+  width: 30%;
+  height: 364px;
+}
+
+.liste_recettes .recette .image {
+  background-color: #C7BEBE;
+  width: 100%;
+  height: 178px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.liste_recettes .recette .recette_indications {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #E7E7E7;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 20px;
+}
+
+.liste_recettes .recette .recette_indications .titre_temps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.liste_recettes .recette .recette_indications .ingredients_indications {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.liste_recettes .recette .recette_indications .ingredients_indications .ingredients {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.liste_recettes .recette .recette_indications .ingredients_indications .indications {
+  width: 50%;
+  text-align: justify;
 }
 /*# sourceMappingURL=main.css.map */
