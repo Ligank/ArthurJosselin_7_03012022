@@ -14,12 +14,14 @@
 </head>
 <body>
     <header>
-        <figure class="figure_image">
-            <img src="images/Logo.png" class="Logo" alt="Logo" aria-label="Logo">
-        </figure>
+        <a href="index.html">
+            <figure class="figure_image">
+                <img src="images/Logo.png" class="Logo" alt="Logo" aria-label="Logo">
+            </figure>
+        </a>
 
         <div class="recherche">
-            <input type="search" name="recherche" placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette" class="recherche_barre">
+            <input type="search" name="recherche" placeholder="Rechercher un ingrédient, appareil, ustensile ou une recette" class="recherche_barre">
             <i class="fas fa-search loupe"></i>
         </div>
 
@@ -36,8 +38,9 @@
                         <p>Ingredients</p>
                         <i class="fas fa-chevron-down fleche_bas"></i>
                     </div>
+                    
                     <div class="menu_ouvert menu_ingredients_ouvert">
-                        <div class="recherche_tag">
+                        <div class="recherche_liste">
                             <input type="search" placeholder="Recherchez un ingrédient" class="input_tag input_tag_ingredients">
                             <i class="fas fa-chevron-up fleche_haut"></i>
                         </div>
@@ -57,8 +60,9 @@
                         <p>Appareils</p>
                         <i class="fas fa-chevron-down fleche_bas"></i>
                     </div>
+
                     <div class="menu_ouvert menu_appareils_ouvert">
-                        <div class="recherche_tag">
+                        <div class="recherche_liste">
                             <input type="search" placeholder="Recherchez un appareil" class="input_tag input_tag_appareils">
                             <i class="fas fa-chevron-up fleche_haut"></i>
                         </div>
@@ -78,8 +82,9 @@
                         <p>Ustensiles</p>
                         <i class="fas fa-chevron-down fleche_bas"></i>
                     </div>
+
                     <div class="menu_ouvert menu_ustensiles_ouvert">
-                        <div class="recherche_tag">
+                        <div class="recherche_liste">
                             <input type="search" placeholder="Recherchez un ustensile" class="input_tag input_tag_ustensiles">
                             <i class="fas fa-chevron-up fleche_haut"></i>
                         </div>
@@ -91,7 +96,6 @@
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -100,75 +104,10 @@
 
     <main>
         <div class="liste_recettes">
-            <a class="recette">
-                <div class="image"></div>
-                <div class="recette_indications">
-                    <div class="titre_temps">
-                        <p>Limonade de coco</p>
-                        <p><i class="far fa-clock"></i> 10 min</p>
-                    </div>
-                    <div class="ingredients_indications">
-                        <div class="ingredients">
-                            <p><b>Lait de coco:</b> 400ml</p>
-                            <p><b>Jus de citron:</b> 2</p>
-                            <p><b>Créme de coco:</b> 4 cuillères</p>
-                            <p><b>Sucre:</b> 20g</p>
-                            <p><b>Glaçons:</b> 2</p>
-                        </div>
-                        <div class="indications">
-                            <p>Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a class="recette">
-                <div class="image"></div>
-                <div class="recette_indications">
-                    <div class="titre_temps">
-                        <p>Limonade de coco</p>
-                        <p><i class="far fa-clock"></i> 10 min</p>
-                    </div>
-                    <div class="ingredients_indications">
-                        <div class="ingredients">
-                            <p><b>Lait de coco:</b> 400ml</p>
-                            <p><b>Jus de citron:</b> 2</p>
-                            <p><b>Créme de coco:</b> 4 cuillères</p>
-                            <p><b>Sucre:</b> 20g</p>
-                            <p><b>Glaçons:</b> 2</p>
-                        </div>
-                        <div class="indications">
-                            <p>Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a class="recette">
-                <div class="image"></div>
-                <div class="recette_indications">
-                    <div class="titre_temps">
-                        <p>Limonade de coco</p>
-                        <p><i class="far fa-clock"></i> 10 min</p>
-                    </div>
-                    <div class="ingredients_indications">
-                        <div class="ingredients">
-                            <p><b>Lait de coco:</b> 400ml</p>
-                            <p><b>Jus de citron:</b> 2</p>
-                            <p><b>Créme de coco:</b> 4 cuillères</p>
-                            <p><b>Sucre:</b> 20g</p>
-                            <p><b>Glaçons:</b> 2</p>
-                        </div>
-                        <div class="indications">
-                            <p>Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
+            
         </div>
-
-    </main>    
-
+    </main>  
     
+    <script type="module" src="index.js"></script>
 </body>
 </html>

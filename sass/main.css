@@ -6,7 +6,7 @@
 }
 
 body {
-  max-width: 1440px;
+  max-width: 1540px;
   margin: auto;
 }
 
@@ -167,9 +167,11 @@ body {
   margin: 7px;
   padding: 15px 20px;
   border-radius: 5px;
+  display: none;
+  cursor: pointer;
 }
 
-.recherche_tag .tag_liste .menu_ouvert .recherche_tag {
+.recherche_tag .tag_liste .menu_ouvert .recherche_liste {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,7 +185,7 @@ body {
           justify-content: space-between;
 }
 
-.recherche_tag .tag_liste .menu_ouvert .recherche_tag .input_tag {
+.recherche_tag .tag_liste .menu_ouvert .recherche_liste .input_tag {
   border: none;
   outline: none;
   min-width: 220px;
@@ -192,7 +194,7 @@ body {
   margin-bottom: 26px;
 }
 
-.recherche_tag .tag_liste .menu_ouvert .recherche_tag .fleche_haut {
+.recherche_tag .tag_liste .menu_ouvert .recherche_liste .fleche_haut {
   cursor: pointer;
 }
 
@@ -217,6 +219,11 @@ body {
   min-width: 180px;
   margin-bottom: 10px;
   cursor: pointer;
+}
+
+.recherche_tag .tag_liste .menu_ouvert:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 .tag_ingredient, .menu_ingredients_ferme, .menu_ingredients_ouvert, .input_tag_ingredients {
@@ -303,13 +310,17 @@ header .recherche .loupe {
 
 .liste_recettes .recette {
   width: 30%;
-  height: 364px;
+  min-width: 300px;
+  height: 450px;
+  margin-bottom: 70px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .liste_recettes .recette .image {
   background-color: #C7BEBE;
   width: 100%;
-  height: 178px;
+  height: 50%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -322,10 +333,12 @@ header .recherche .loupe {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 50%;
   background-color: #E7E7E7;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  padding: 20px;
+  padding: 10px;
+  padding-top: 20px;
 }
 
 .liste_recettes .recette .recette_indications .titre_temps {
@@ -336,6 +349,12 @@ header .recherche .loupe {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 20px;
+  font-size: 18px;
+  height: 45px;
+}
+
+.liste_recettes .recette .recette_indications .titre_temps .temps {
+  white-space: nowrap;
 }
 
 .liste_recettes .recette .recette_indications .ingredients_indications {
@@ -348,7 +367,7 @@ header .recherche .loupe {
 }
 
 .liste_recettes .recette .recette_indications .ingredients_indications .ingredients {
-  width: 50%;
+  width: 48%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -356,10 +375,29 @@ header .recherche .loupe {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-size: 14px;
+}
+
+.liste_recettes .recette .recette_indications .ingredients_indications .ingredients p {
+  margin-top: 1px;
 }
 
 .liste_recettes .recette .recette_indications .ingredients_indications .indications {
   width: 50%;
-  text-align: justify;
+}
+
+.liste_recettes .recette .recette_indications .ingredients_indications .indications p {
+  height: 145px;
+  font-size: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.liste_recettes .recette:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 /*# sourceMappingURL=main.css.map */

@@ -59,7 +59,9 @@
             margin: 7px;
             padding: 15px 20px;
             border-radius: 5px;
-            .recherche_tag {
+            display: none;
+            cursor: pointer;
+            .recherche_liste {
                 display: flex;
                 flex-direction: row;
                 width: 100%;
@@ -91,6 +93,9 @@
                     }
                 }
             }
+        }
+        .menu_ouvert:hover {
+            transform: scale(1.02);
         }
     }
 }
