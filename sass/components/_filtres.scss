@@ -90,12 +90,15 @@
                         min-width: 180px;
                         margin-bottom: 10px;
                         cursor: pointer;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    li:hover {
+                        transform: scale(1.01);
                     }
                 }
             }
-        }
-        .menu_ouvert:hover {
-            transform: scale(1.02);
         }
     }
 }
@@ -103,7 +106,7 @@
 .tag_ingredient, .menu_ingredients_ferme, .menu_ingredients_ouvert, .input_tag_ingredients {
     background-color: #3282F7;
 }
-.tag_appareil, .menu_appareil_ferme, .menu_appareils_ouvert, .input_tag_appareils {
+.tag_appareil, .menu_appareil_ferme, .menu_appareil_ouvert, .input_tag_appareils {
     background-color: #68D9A4;
 }
 .tag_ustensiles, .menu_ustensiles_ferme, .menu_ustensiles_ouvert, .input_tag_ustensiles {

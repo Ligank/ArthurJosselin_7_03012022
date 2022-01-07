@@ -219,18 +219,21 @@ body {
   min-width: 180px;
   margin-bottom: 10px;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.recherche_tag .tag_liste .menu_ouvert:hover {
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
+.recherche_tag .tag_liste .menu_ouvert .filtre_tag ul li:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
 }
 
 .tag_ingredient, .menu_ingredients_ferme, .menu_ingredients_ouvert, .input_tag_ingredients {
   background-color: #3282F7;
 }
 
-.tag_appareil, .menu_appareil_ferme, .menu_appareils_ouvert, .input_tag_appareils {
+.tag_appareil, .menu_appareil_ferme, .menu_appareil_ouvert, .input_tag_appareils {
   background-color: #68D9A4;
 }
 

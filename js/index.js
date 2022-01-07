@@ -1,8 +1,16 @@
 "use strict";
 
+import Liste from "./liste_filtre.js";
+import Tag from "./tag.js";
+
 window.onload = function() {
     pageIndex();
 };
+
+//Creation des tableaux contentant les ingredients, appareils et ustensiles
+let ingredientsArray = [];
+let appareilArray = [];
+let ustensileArray = [];
 
 function pageIndex() {
     //recupération fichier json------------------------------------------
@@ -37,8 +45,6 @@ function pageIndex() {
                 titre.innerHTML = element.name;
                 titre_temps.appendChild(titre);
                 let temps = document.createElement("b");
-                let clock = document.createElement("i");
-                clock.classList.add("far", "fa-clock");
                 temps.classList.add("temps");
                 temps.innerHTML = '<i class="far fa-clock" aria-hidden="true"></i>' + " " + element.time + " min";
                 titre_temps.appendChild(temps);
@@ -54,18 +60,38 @@ function pageIndex() {
                 //creation pour chaque ingredients et verification si il y a une quantité et une unité
                 element.ingredients.forEach(element => {
                     let ingredient = document.createElement("p");
-                    let bold_ingredient = `<b>${element.ingredient}: </b>`;
+                    let bold_ingredient = `<b>${element.ingredient}</b>`;
                     if (element.quantity !== undefined) {
                         if (element.unit !== undefined) {
-                            ingredient.innerHTML = bold_ingredient + element.quantity + " " + element.unit;
+                            ingredient.innerHTML = bold_ingredient + ": " + element.quantity + " " + element.unit;
                         } else {
-                            ingredient.innerHTML = bold_ingredient + element.quantity;
+                            ingredient.innerHTML = bold_ingredient + ": " + element.quantity;
                         }
                     } else {
                         ingredient.innerHTML = bold_ingredient;
                     }
                     ingredients.appendChild(ingredient);
+
+                    //Ajout des ingredients dans un tableau
+                    if (ingredientsArray.includes(element.ingredient)) {
+                    } else {
+                        ingredientsArray.push(element.ingredient);
+                    }
                 });
+
+                //Ajout des appareils dans un tableau
+                if (appareilArray.includes(element.appliance)) {
+                } else {
+                    appareilArray.push(element.appliance);
+                }
+
+                //Ajout des ustensiles dans un tableau
+                element.ustensils.forEach(element => {
+                    if (ustensileArray.includes(element)) {
+                        } else {
+                            ustensileArray.push(element);
+                        }
+                })
                 
                 //creation indications
                 let indications = document.createElement("div");
@@ -75,7 +101,38 @@ function pageIndex() {
                 indications.appendChild(texte_recette);
                 texte_recette.innerHTML = element.description;
             });
+        })
+        //Creation des listes ingredients, appareils et ustensiles
+        .then(function() {
+            new Liste().ouvertureMenu();
 
+            //Ajout des ingredients disponibles
+            let filtre_tag_ingredient = document.querySelector(".filtre_tag_ingredient");
+            ingredientsArray.forEach(element => {
+                let filtre_tag_ingredient_li = document.createElement("li");
+                filtre_tag_ingredient_li.classList.add("filtre_tag_ingredient_li", "filtre_tag_li", "ingredient");
+                filtre_tag_ingredient_li.innerHTML = element;
+                filtre_tag_ingredient.appendChild(filtre_tag_ingredient_li);
+            });
+
+            //Ajout des appareils disponibles
+            let filtre_tag_appareil = document.querySelector(".filtre_tag_appareil");
+            appareilArray.forEach(element => {
+                let filtre_tag_appareil_li = document.createElement("li");
+                filtre_tag_appareil_li.classList.add("filtre_tag_appareil_li", "filtre_tag_li", "appareil");
+                filtre_tag_appareil_li.innerHTML = element;
+                filtre_tag_appareil.appendChild(filtre_tag_appareil_li);
+            });
+
+            //Ajout des ustensiles disponibles
+            let filtre_tag_ustensile = document.querySelector(".filtre_tag_ustensile");
+            ustensileArray.forEach(element => {
+                let filtre_tag_ustensile_li = document.createElement("li");
+                filtre_tag_ustensile_li.classList.add("filtre_tag_ustensile_li", "filtre_tag_li", "ustensile");
+                filtre_tag_ustensile_li.innerHTML = element;
+                filtre_tag_ustensile.appendChild(filtre_tag_ustensile_li);
+            });
+            new Tag().ajoutTag();
         })
         .catch(function() {
         console.log("erreur");
