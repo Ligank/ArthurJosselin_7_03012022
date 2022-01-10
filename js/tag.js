@@ -1,5 +1,7 @@
 "use strict";
 
+import FiltreTag from "./filtre_tags.js";
+
 export default class Tag {
     ajoutTag(element) {
         const tag_selectionne = document.querySelector(".tag_selectionne");
@@ -7,8 +9,11 @@ export default class Tag {
         document.querySelectorAll(".filtre_tag_li").forEach(item => {
             item.addEventListener("click", function() {
                 item.style.display = "none";
+
+                //verification du type d'objet et creation du tag avec la bonne couleur
                 if (item.classList.contains("ingredient")) {
                     let tag_ingredient = document.createElement("div");
+                    item.classList.add(item.innerHTML.replace(/\s/g, "").replace(/['\s\%\s\(\s\)]/g, ""));
                     tag_ingredient.classList.add("tag_ingredient", "tag");
                     let ingredientNom = document.createElement("p");
                     ingredientNom.innerHTML = item.innerHTML + " " + '<i class="far fa-times-circle close" aria-hidden="true"></i>';
@@ -17,6 +22,7 @@ export default class Tag {
 
                 } else if (item.classList.contains("appareil")) {
                     let tag_appareil = document.createElement("div");
+                    item.classList.add(item.innerHTML.replace(/\s/g, "").replace(/['\s\%\s\(\s\)]/g, ""));
                     tag_appareil.classList.add("tag_appareil", "tag");
                     let appareilNom = document.createElement("p");
                     appareilNom.innerHTML = item.innerHTML + " " + '<i class="far fa-times-circle close" aria-hidden="true"></i>';
@@ -25,6 +31,7 @@ export default class Tag {
 
                 } else if (item.classList.contains("ustensile")) {
                     let tag_ustensile = document.createElement("div");
+                    item.classList.add(item.innerHTML.replace(/\s/g, "").replace(/['\s\%\s\(\s\)]/g, ""));
                     tag_ustensile.classList.add("tag_ustensiles", "tag");
                     let ustensileNom = document.createElement("p");
                     ustensileNom.innerHTML = item.innerHTML + " " + '<i class="far fa-times-circle close" aria-hidden="true"></i>';
@@ -32,15 +39,19 @@ export default class Tag {
                     tag_selectionne.appendChild(tag_ustensile);
                 }
 
+                new FiltreTag().filtreTag();
+
+                //Retrait du tag et réapparition dans la liste
                 document.querySelectorAll(".close").forEach(item => {
                     item.addEventListener("click", function() {
+                        let get_tag_class = item.parentElement.innerHTML.replace(/\s/g, '').replace('<iclass="farfa-times-circleclose"aria-hidden="true"></i>','').replace(/['\s\%\s\(\s\)]/g, "");
+                        document.querySelector("." + get_tag_class).style.display = "block";
+                        document.querySelector("." + get_tag_class).classList.remove("actif");
                         item.parentElement.parentElement.parentElement.removeChild(item.parentElement.parentElement);
-                        
+                        new FiltreTag().filtreTag();
                     })
                 })
             })
         })
-
-        
     }
 }
