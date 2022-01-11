@@ -19,8 +19,8 @@ export default class Tag {
                     ingredientNom.innerHTML = item.innerHTML + " " + '<i class="far fa-times-circle close" aria-hidden="true"></i>';
                     tag_ingredient.appendChild(ingredientNom);
                     tag_selectionne.appendChild(tag_ingredient);
-
-                } else if (item.classList.contains("appareil")) {
+                } 
+                else if (item.classList.contains("appareil")) {
                     let tag_appareil = document.createElement("div");
                     item.classList.add(item.innerHTML.replace(/\s/g, "").replace(/['\s\%\s\(\s\)]/g, ""));
                     tag_appareil.classList.add("tag_appareil", "tag");
@@ -28,8 +28,8 @@ export default class Tag {
                     appareilNom.innerHTML = item.innerHTML + " " + '<i class="far fa-times-circle close" aria-hidden="true"></i>';
                     tag_appareil.appendChild(appareilNom);
                     tag_selectionne.appendChild(tag_appareil);
-
-                } else if (item.classList.contains("ustensile")) {
+                } 
+                else if (item.classList.contains("ustensile")) {
                     let tag_ustensile = document.createElement("div");
                     item.classList.add(item.innerHTML.replace(/\s/g, "").replace(/['\s\%\s\(\s\)]/g, ""));
                     tag_ustensile.classList.add("tag_ustensiles", "tag");
@@ -45,10 +45,12 @@ export default class Tag {
                 document.querySelectorAll(".close").forEach(item => {
                     item.addEventListener("click", function() {
                         let get_tag_class = item.parentElement.innerHTML.replace(/\s/g, '').replace('<iclass="farfa-times-circleclose"aria-hidden="true"></i>','').replace(/['\s\%\s\(\s\)]/g, "");
-                        document.querySelector("." + get_tag_class).style.display = "block";
-                        document.querySelector("." + get_tag_class).classList.remove("actif");
-                        item.parentElement.parentElement.parentElement.removeChild(item.parentElement.parentElement);
+                        let tag_inactif = document.querySelector("." + get_tag_class);
+                        tag_inactif.style.display = "block";
+                        tag_inactif.classList.remove("actif");
                         new FiltreTag().filtreTag();
+                        item.parentElement.parentElement.parentElement.removeChild(item.parentElement.parentElement);
+                        
                     })
                 })
             })

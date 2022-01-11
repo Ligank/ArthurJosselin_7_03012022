@@ -26,9 +26,11 @@ export default class FiltreTags {
             this.cacherRecette(recette);
     
         });
-    }
 
-    //rangement des filtre actifs dans un tableau
+        this.cacherRecette(recette);
+    }
+    
+    //rangement des filtres actifs dans un tableau
     filtresActifs() {
         let filtreActives = document.querySelectorAll(".actif");
         let filtreSelection = [];
