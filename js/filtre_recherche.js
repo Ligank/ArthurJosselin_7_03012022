@@ -3,7 +3,7 @@ export default class FiltreRecherche {
         let barreRecherche = document.querySelector(".recherche_barre");
         barreRecherche.addEventListener('input', function() {
             if (barreRecherche.value.length > 2) {
-                console.log("test");
+                console.log("Filter");
             }
         })
     }
