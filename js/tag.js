@@ -50,7 +50,6 @@ export default class Tag {
                         tag_inactif.classList.remove("actif");
                         new FiltreTag().filtreTag();
                         item.parentElement.parentElement.parentElement.removeChild(item.parentElement.parentElement);
-                        
                     })
                 })
             })

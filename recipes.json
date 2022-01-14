@@ -736,7 +736,7 @@
                 "unit": "cl"
             },
             {
-                "ingredient": "Crème Fraiche",
+                "ingredient": "Crème fraiche",
                 "quantity" : 1,
                 "unit": "cuillères à soupe"
             }
@@ -806,7 +806,7 @@
                 "quantity": 3
             },
             {
-                "ingredient": "Crème Fraîche",
+                "ingredient": "Crème fraîche",
                 "quantity": 20,
                 "unit": "cl"
             },
@@ -1611,7 +1611,7 @@
                 "unit": "grammes"
             },
             {
-                "ingredient": "Crème Fraîche",
+                "ingredient": "Crème fraîche",
                 "quantity": 20,
                 "unit":"cl"
             }
