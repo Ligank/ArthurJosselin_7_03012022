@@ -64,6 +64,4 @@ export default class FiltreTags {
             }
         });
     }
-  
-   
 }

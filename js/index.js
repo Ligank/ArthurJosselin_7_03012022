@@ -104,6 +104,8 @@ function pageIndex() {
                 let texte_recette = document.createElement("p");
                 indications.appendChild(texte_recette);
                 texte_recette.innerHTML = element.description;
+
+                new FiltreRecherche().creationArray(element);
             });
         })
         //Creation des listes ingredients, appareils et ustensiles
@@ -140,7 +142,11 @@ function pageIndex() {
                 filtre_tag_ustensile.appendChild(filtre_tag_ustensile_li);
             });
             new Tag().ajoutTag();
-            new FiltreRecherche().filtreTitre();
+            let barreRecherche = document.querySelector(".recherche_barre");
+            barreRecherche.addEventListener('input', event => {
+                new FiltreRecherche().filtreRecherche();
+            })
+            
         })
         .catch(function() {
         console.log("erreur");
