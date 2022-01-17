@@ -23,6 +23,7 @@ function pageIndex() {
                 //Creation contenant
                 let recette = document.createElement("a");
                 recette.classList.add("recette");
+                recette.classList.add(element.name.replace(/['\s\%\s\(\s\)]/g, ""));
                 recette.href = "index.html";
 
                 //insertion
@@ -105,7 +106,6 @@ function pageIndex() {
                 indications.appendChild(texte_recette);
                 texte_recette.innerHTML = element.description;
 
-                new FiltreRecherche().creationArray(element);
             });
         })
         //Creation des listes ingredients, appareils et ustensiles
@@ -116,7 +116,7 @@ function pageIndex() {
             let filtre_tag_ingredient = document.querySelector(".filtre_tag_ingredient");
             ingredientsArray.forEach(element => {
                 let filtre_tag_ingredient_li = document.createElement("li");
-                filtre_tag_ingredient_li.classList.add("filtre_tag_ingredient_li", "filtre_tag_li", "ingredient");
+                filtre_tag_ingredient_li.classList.add("filtre_tag_ingredient_li", "filtre_tag_li", "ingredient", element.replace(/['\s\%\s\(\s\)]/g, ""));
                 filtre_tag_ingredient_li.innerHTML = element;
                 filtre_tag_ingredient_li.setAttribute("data-filter", element.replace(/['\s\%\s\(\s\)]/g, ""));
                 filtre_tag_ingredient.appendChild(filtre_tag_ingredient_li);
@@ -126,7 +126,7 @@ function pageIndex() {
             let filtre_tag_appareil = document.querySelector(".filtre_tag_appareil");
             appareilArray.forEach(element => {
                 let filtre_tag_appareil_li = document.createElement("li");
-                filtre_tag_appareil_li.classList.add("filtre_tag_appareil_li", "filtre_tag_li", "appareil");
+                filtre_tag_appareil_li.classList.add("filtre_tag_appareil_li", "filtre_tag_li", "appareil", element.replace(/['\s\%\s\(\s\)]/g, ""));
                 filtre_tag_appareil_li.innerHTML = element;
                 filtre_tag_appareil_li.setAttribute("data-filter", element.replace(/['\s\%\s\(\s\)]/g, ""));
                 filtre_tag_appareil.appendChild(filtre_tag_appareil_li);
@@ -136,7 +136,7 @@ function pageIndex() {
             let filtre_tag_ustensile = document.querySelector(".filtre_tag_ustensile");
             ustensileArray.forEach(element => {
                 let filtre_tag_ustensile_li = document.createElement("li");
-                filtre_tag_ustensile_li.classList.add("filtre_tag_ustensile_li", "filtre_tag_li", "ustensile");
+                filtre_tag_ustensile_li.classList.add("filtre_tag_ustensile_li", "filtre_tag_li", "ustensile", element.replace(/['\s\%\s\(\s\)]/g, ""));
                 filtre_tag_ustensile_li.innerHTML = element;
                 filtre_tag_ustensile_li.setAttribute("data-filter", element.replace(/['\s\%\s\(\s\)]/g, ""));
                 filtre_tag_ustensile.appendChild(filtre_tag_ustensile_li);

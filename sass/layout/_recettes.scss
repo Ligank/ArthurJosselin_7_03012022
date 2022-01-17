@@ -70,3 +70,20 @@
         transform: scale(1.05);
     }
 }
+
+.aucune_recette {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    display: none;
+    animation: aucune_recette 300ms;
+}
+
+@keyframes aucune_recette {
+    0% {
+        transform: translateY(700px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

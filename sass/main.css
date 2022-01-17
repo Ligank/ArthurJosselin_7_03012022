@@ -63,6 +63,10 @@ body {
   font-weight: bold;
 }
 
+.aucune_recette {
+  font-size: 22px;
+}
+
 .recherche_tag {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -402,5 +406,36 @@ header .recherche .loupe {
 .liste_recettes .recette:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+}
+
+.aucune_recette {
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+  display: none;
+  -webkit-animation: aucune_recette 300ms;
+          animation: aucune_recette 300ms;
+}
+
+@-webkit-keyframes aucune_recette {
+  0% {
+    -webkit-transform: translateY(700px);
+            transform: translateY(700px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes aucune_recette {
+  0% {
+    -webkit-transform: translateY(700px);
+            transform: translateY(700px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 /*# sourceMappingURL=main.css.map */
