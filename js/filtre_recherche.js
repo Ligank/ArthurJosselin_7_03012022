@@ -1,5 +1,5 @@
 "use strict";
-let recetteActivesClasses = [];
+import FiltreRechercheTags from "./filtre_recherche_tags.js";
 export default class FiltreRecherche {
     
     filtreRecherche() {
@@ -9,6 +9,7 @@ export default class FiltreRecherche {
                 const filtreTexte = (arr, requete) => {
                     return arr.filter(el =>  el.toLowerCase().indexOf(requete.toLowerCase()) !== -1);
                   }
+                  //recherche de concordance entre les classes des recettes et l'input de la barre de recherche
                   recette.forEach(element => {
                       let elementclasses = element.classList.value;
                       let classes = elementclasses.split(" ")
@@ -17,60 +18,23 @@ export default class FiltreRecherche {
                             element.style.display = "block";
                             element.classList.add("actifrecherche");
                             document.querySelector(".aucune_recette").style.display ="none";
-                            this.cacherTag();
-                            
+                            new FiltreRechercheTags().cacherTag();
                         } else {
                             element.style.display = "none";
                             element.classList.remove("actifrecherche");
-                            this.cacherTag();
+                            new FiltreRechercheTags().cacherTag();
                         }
                         if (document.querySelectorAll(".actifrecherche").length == 0) {
                             document.querySelector(".aucune_recette").style.display ="block";
-                            console.log("test")
                         }
-                        
                 })
-                  
             } else {
                 recette.forEach( element => {
                     element.style.display = "block";
                     element.classList.add("actifrecherche");
                 })
                 document.querySelector(".aucune_recette").style.display ="none";
-                this.cacherTag();
+                new FiltreRechercheTags().cacherTag();
             }
-    }
-
-    //Cacher les tags
-    comparaisonTags(article) {
-        let filtres = recetteActivesClasses;
-        let nomClasse = article.classList.value;
-        let classes = nomClasse.split(" ");
-        let intersection = filtres.filter(
-            x => classes.includes(x)
-        );
-  
-        return intersection.length > 0;
-    }
-
-    cacherTag() {
-        let recetteActive = document.querySelectorAll(".actifrecherche");
-        recetteActivesClasses = [];
-        recetteActive.forEach(element => {
-            let nomClasse = element.classList.value;
-            let classes = nomClasse.split(" ");
-            classes.forEach(element => {
-                recetteActivesClasses.push(element);
-            })
-        })
-        
-        let tags = document.querySelectorAll(".filtre_tag_li");
-        tags.forEach((article) => {
-            if (this.comparaisonTags(article)) {
-                article.style.display = "block";
-            } else {
-                article.style.display = "none";
-            }
-        });
     }
 }
