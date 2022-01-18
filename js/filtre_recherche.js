@@ -16,6 +16,7 @@ export default class FiltreRecherche {
                         if (resultRecherche.length > 0) {
                             element.style.display = "block";
                             element.classList.add("actifrecherche");
+                            document.querySelector(".aucune_recette").style.display ="none";
                             this.cacherTag();
                             
                         } else {
@@ -23,6 +24,11 @@ export default class FiltreRecherche {
                             element.classList.remove("actifrecherche");
                             this.cacherTag();
                         }
+                        if (document.querySelectorAll(".actifrecherche").length == 0) {
+                            document.querySelector(".aucune_recette").style.display ="block";
+                            console.log("test")
+                        }
+                        
                 })
                   
             } else {
@@ -30,6 +36,7 @@ export default class FiltreRecherche {
                     element.style.display = "block";
                     element.classList.add("actifrecherche");
                 })
+                document.querySelector(".aucune_recette").style.display ="none";
                 this.cacherTag();
             }
     }
