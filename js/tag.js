@@ -1,5 +1,4 @@
 "use strict";
-import FiltreRechercheTags from "./filtre_recherche_tags.js";
 import FiltreTag from "./filtre_tags.js";
 
 export default class Tag {
@@ -9,7 +8,6 @@ export default class Tag {
         document.querySelectorAll(".filtre_tag_li").forEach(item => {
             item.addEventListener("click", function() {
                 item.style.display = "none";
-                
 
                 //verification du type d'objet et creation du tag avec la bonne couleur
                 if (item.classList.contains("ingredient")) {
@@ -51,7 +49,6 @@ export default class Tag {
                         tag_inactif.classList.remove("actif");
                         new FiltreTag().filtreTag();
                         item.parentElement.parentElement.parentElement.removeChild(item.parentElement.parentElement);
-                        new FiltreRechercheTags().cacherTag();
                     })
                 })
             })
