@@ -6,7 +6,12 @@ export default class FiltreRecherche {
         barreRecherche.addEventListener('input', function() {
             if (barreRecherche.value.length > 2) {
                 for(let i = 0; i < recette.length; i++) {
-                    console.log("test")
+                    let elementclasses = recette[i].classList.value;
+                    let classes = elementclasses.split(" ");
+
+                    console.log(classes)
+
+
                 }
 
 
@@ -19,9 +24,8 @@ export default class FiltreRecherche {
 
             } else {
                 for(let i = 0; i < recette.length; i++) {
-                    console.log(recette[i])
-                    //recette[i].style.display = "block";
-                    //recette[i].classList.add("actifrecherche");
+                    recette[i].style.display = "block";
+                    recette[i].classList.add("actifrecherche");
                 }
                 document.querySelector(".aucune_recette").style.display ="none";
                 new FiltreRechercheTags().cacherTag();
