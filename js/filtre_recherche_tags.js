@@ -22,6 +22,7 @@ export default class FiltreRechercheTags {
             classes.forEach(element => {
                 recetteActivesClasses.push(element);
             })
+            console.log(classes)
         })
         
         let tags = document.querySelectorAll(".filtre_tag_li");
