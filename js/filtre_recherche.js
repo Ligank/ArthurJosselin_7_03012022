@@ -38,6 +38,6 @@ export default class FiltreRecherche {
                 document.querySelector(".aucune_recette").style.display ="none";
                 new FiltreRechercheTags().cacherTag();
             }
-        })
+        });
     }
 }
