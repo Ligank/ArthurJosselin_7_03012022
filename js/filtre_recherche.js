@@ -1,3 +1,4 @@
+"use strict";
 import FiltreRechercheTags from "./filtre_recherche_tags.js";
 export default class FiltreRecherche {
     filtreTitre() {
@@ -8,7 +9,7 @@ export default class FiltreRecherche {
                 for(let i = 0; i < recette.length; i++) {
                     let elementclasses = recette[i].classList.value;
                     let classes = elementclasses.toLowerCase().split(" ");
-                    let input = barreRecherche.value.toLowerCase();
+                    let input = barreRecherche.value.toLowerCase().replace(/['\s\%\s\(\s\)]/g, "");
                     let arrayActive = [];
 
                     for (let j = 0; j < classes.length; j++) {
@@ -17,8 +18,15 @@ export default class FiltreRecherche {
                         }
                         if (arrayActive.length > 0) {
                             recette[i].style.display = "block";
+                            recette[i].classList.add("actifrecherche");
+                            new FiltreRechercheTags().cacherTag();
                         } else {
                             recette[i].style.display = "none"; 
+                            recette[i].classList.remove("actifrecherche");
+                            new FiltreRechercheTags().cacherTag();
+                        }
+                        if (document.querySelectorAll(".actifrecherche").length == 0) {
+                            document.querySelector(".aucune_recette").style.display ="block";
                         }
                     }
                 }
