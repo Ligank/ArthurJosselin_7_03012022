@@ -7,21 +7,21 @@ export default class FiltreRecherche {
             if (barreRecherche.value.length > 2) {
                 for(let i = 0; i < recette.length; i++) {
                     let elementclasses = recette[i].classList.value;
-                    let classes = elementclasses.split(" ");
+                    let classes = elementclasses.toLowerCase().split(" ");
+                    let input = barreRecherche.value.toLowerCase();
+                    let arrayActive = [];
 
-                    console.log(classes)
-
-
+                    for (let j = 0; j < classes.length; j++) {
+                        if (classes[j].indexOf(input) !== -1) {
+                            arrayActive.push(classes[j]);
+                        }
+                        if (arrayActive.length > 0) {
+                            recette[i].style.display = "block";
+                        } else {
+                            recette[i].style.display = "none"; 
+                        }
+                    }
                 }
-
-
-
-
-
-
-
-
-
             } else {
                 for(let i = 0; i < recette.length; i++) {
                     recette[i].style.display = "block";
