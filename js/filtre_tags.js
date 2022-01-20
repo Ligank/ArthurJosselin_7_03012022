@@ -1,3 +1,4 @@
+import FiltreRechercheTags from "./filtre_recherche_tags.js";
 export default class FiltreTags {
     //Choix du filtre-------------------------------------------------------------------
     filtreTag() {
@@ -59,9 +60,14 @@ export default class FiltreTags {
         recette.forEach((article) => {
             if (this.comparaisonFiltres(article)) {
                 article.style.display = "block";
+                article.classList.add("actifrecherche");
             } else {
                 article.style.display = "none";
+                article.classList.remove("actifrecherche");
             }
+            new FiltreRechercheTags().cacherTag();
         });
     }
+  
+   
 }
