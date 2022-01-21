@@ -4,12 +4,12 @@ export default class FiltreRecherche {
     filtreTitre() {
         let recette = document.querySelectorAll(".recette");
         let barreRecherche = document.querySelector(".recherche_barre");
-        barreRecherche.addEventListener('input', function() {
+        barreRecherche.addEventListener("input", function() {
             if (barreRecherche.value.length > 2) {
                 for(let i = 0; i < recette.length; i++) {
                     let elementclasses = recette[i].classList.value;
                     let classes = elementclasses.toLowerCase().split(" ");
-                    let input = barreRecherche.value.toLowerCase().replace(/['\s\%\s\(\s\)]/g, "");
+                    let input = barreRecherche.value.toLowerCase().replace(/['\s%\s(\s)]/g, "");
                     let arrayActive = [];
 
                     for (let j = 0; j < classes.length; j++) {

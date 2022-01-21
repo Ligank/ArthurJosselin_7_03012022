@@ -21,8 +21,8 @@ export default class FiltreRechercheTags {
             let classes = nomClasse.split(" ");
             classes.forEach(element => {
                 recetteActivesClasses.push(element);
-            })
-        })
+            });
+        });
         
         let tags = document.querySelectorAll(".filtre_tag_li");
         tags.forEach((article) => {
