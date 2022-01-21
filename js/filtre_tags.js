@@ -39,20 +39,20 @@ export default class FiltreTags {
             filtreSelection.push(filtreActives.getAttribute("data-filter"));
         });
     
-        return filtreSelection
+        return filtreSelection;
     }
 
     //Compare avec les profils pour trouver ceux avec le même tag
     comparaisonFiltres(article) {
-      let filtres = this.filtresActifs();
-      let nomClasse = article.classList.value;
-      let classes = nomClasse.split(" ");
-      let intersection = filtres.filter(
-          x => classes.includes(x)
-      );
+        let filtres = this.filtresActifs();
+        let nomClasse = article.classList.value;
+        let classes = nomClasse.split(" ");
+        let intersection = filtres.filter(
+            x => classes.includes(x)
+        );
 
-      return filtres.length == intersection.length;
-  }
+        return filtres.length == intersection.length;
+    }
 
     //cache les profils qui ne comportent pas les tags actifs
     cacherRecette(recette) {

@@ -47,7 +47,7 @@ function pageIndex() {
                 titre_temps.appendChild(titre);
                 let temps = document.createElement("b");
                 temps.classList.add("temps");
-                temps.innerHTML = '<i class="far fa-clock" aria-hidden="true"></i>' + " " + element.time + " min";
+                temps.innerHTML = "<i class=\"far fa-clock\" aria-hidden=\"true\"></i>" + " " + element.time + " min";
                 titre_temps.appendChild(temps);
 
                 //creation ingredients
@@ -74,28 +74,25 @@ function pageIndex() {
                     ingredients.appendChild(ingredient);
 
                     //Ajout des ingredients dans un tableau
-                    if (ingredientsArray.includes(element.ingredient)) {
-                    } else {
+                    if (ingredientsArray.includes(element.ingredient) == false) {
                         ingredientsArray.push(element.ingredient);
                     }
-                    recette.classList.add(element.ingredient.replace(/['\s\%\s\(\s\)]/g, ""));
+                    recette.classList.add(element.ingredient.replace(/['\s%\s(\s)]/g, ""));
                 });
 
                 //Ajout des appareils dans un tableau
-                if (appareilArray.includes(element.appliance)) {
-                } else {
+                if (appareilArray.includes(element.appliance) == false) {
                     appareilArray.push(element.appliance);
                 }
-                recette.classList.add(element.appliance.replace(/['\s\%\s\(\s\)]/g, ""));
+                recette.classList.add(element.appliance.replace(/['\s%\s(\s)]/g, ""));
 
                 //Ajout des ustensiles dans un tableau
                 element.ustensils.forEach(element => {
-                    if (ustensileArray.includes(element)) {
-                        } else {
-                            ustensileArray.push(element);
-                        }
-                    recette.classList.add(element.replace(/['\s\%\s\(\s\)]/g, ""));
-                })
+                    if (ustensileArray.includes(element) == false) {
+                        ustensileArray.push(element);
+                    }
+                    recette.classList.add(element.replace(/['\s%\s(\s)]/g, ""));
+                });
                 
                 //creation indications
                 let indications = document.createElement("div");
@@ -116,7 +113,7 @@ function pageIndex() {
                 let filtre_tag_ingredient_li = document.createElement("li");
                 filtre_tag_ingredient_li.classList.add("filtre_tag_ingredient_li", "filtre_tag_li", "ingredient");
                 filtre_tag_ingredient_li.innerHTML = element;
-                filtre_tag_ingredient_li.setAttribute("data-filter", element.replace(/['\s\%\s\(\s\)]/g, ""));
+                filtre_tag_ingredient_li.setAttribute("data-filter", element.replace(/['\s%\s(\s)]/g, ""));
                 filtre_tag_ingredient.appendChild(filtre_tag_ingredient_li);
             });
 
@@ -126,7 +123,7 @@ function pageIndex() {
                 let filtre_tag_appareil_li = document.createElement("li");
                 filtre_tag_appareil_li.classList.add("filtre_tag_appareil_li", "filtre_tag_li", "appareil");
                 filtre_tag_appareil_li.innerHTML = element;
-                filtre_tag_appareil_li.setAttribute("data-filter", element.replace(/['\s\%\s\(\s\)]/g, ""));
+                filtre_tag_appareil_li.setAttribute("data-filter", element.replace(/['\s%\s(\s)]/g, ""));
                 filtre_tag_appareil.appendChild(filtre_tag_appareil_li);
             });
 
@@ -136,14 +133,14 @@ function pageIndex() {
                 let filtre_tag_ustensile_li = document.createElement("li");
                 filtre_tag_ustensile_li.classList.add("filtre_tag_ustensile_li", "filtre_tag_li", "ustensile");
                 filtre_tag_ustensile_li.innerHTML = element;
-                filtre_tag_ustensile_li.setAttribute("data-filter", element.replace(/['\s\%\s\(\s\)]/g, ""));
+                filtre_tag_ustensile_li.setAttribute("data-filter", element.replace(/['\s%\s(\s)]/g, ""));
                 filtre_tag_ustensile.appendChild(filtre_tag_ustensile_li);
             });
             new Tag().ajoutTag();
             new FiltreRecherche().filtreTitre();
         })
         .catch(function() {
-        console.log("erreur");
+            console.log("erreur");
         });
 }
 
