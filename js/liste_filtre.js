@@ -1,7 +1,7 @@
 "use strict";
 
 export default class Liste {
-    ouvertureMenu(element) {
+    ouvertureMenu() {
         const menu_ingredients_ferme = document.querySelector(".menu_ingredients_ferme");
         const menu_ingredients_ouvert = document.querySelector(".menu_ingredients_ouvert");
         const fermer_ingredient = document.querySelector(".fermer_ingredient");
