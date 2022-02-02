@@ -52,7 +52,10 @@ export default class Tag {
                         tag_inactif.style.display = "block";
                         tag_inactif.classList.remove("actif");
                         new FiltreTag().filtreTag();
-                        item.parentElement.parentElement.parentElement.removeChild(item.parentElement.parentElement);
+                        if (typeof(item.parentElement.parentElement) != "undefined" && item.parentElement.parentElement != null) {
+                            //item.parentElement.parentElement.parentElement.removeChild(item.parentElement.parentElement);
+                            item.parentElement.parentElement.style.display = "none";
+                        }
                         new FiltreRechercheTags().cacherTag();
                     });
                 });
