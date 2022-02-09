@@ -75,6 +75,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 90%;
   margin: auto;
   margin-top: 25px;
@@ -127,6 +129,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-top: 10px;
 }
 
@@ -274,7 +278,7 @@ header .figure_image .Logo {
 }
 
 header .recherche {
-  width: 90%;
+  width: 80%;
   height: 69px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -300,6 +304,7 @@ header .recherche .loupe {
       -ms-grid-row-align: center;
       align-self: center;
   vertical-align: middle;
+  margin-right: 10px;
 }
 
 .liste_recettes {

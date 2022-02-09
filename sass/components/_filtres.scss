@@ -1,6 +1,7 @@
 .recherche_tag {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     width: 90%;
     margin: auto;
     margin-top: 25px;
@@ -32,6 +33,7 @@
     }
     .tag_liste {
         display: flex;
+        flex-wrap: wrap;
         margin-top: 10px;
         .menu_ferme {
             width: 150px;
