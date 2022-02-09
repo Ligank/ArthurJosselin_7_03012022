@@ -78,21 +78,21 @@ function pageIndex() {
                     if (ingredientsArray.includes(element.ingredient) == false) {
                         ingredientsArray.push(element.ingredient);
                     }
-                    recette.classList.add(element.ingredient.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e"));
+                    recette.classList.add(element.ingredient.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e").replace(/â/g, "a"));
                 });
 
                 //Ajout des appareils dans un tableau
                 if (appareilArray.includes(element.appliance) == false) {
                     appareilArray.push(element.appliance);
                 }
-                recette.classList.add(element.appliance.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e"));
+                recette.classList.add(element.appliance.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e").replace(/â/g, "a"));
 
                 //Ajout des ustensiles dans un tableau
                 element.ustensils.forEach(element => {
                     if (ustensileArray.includes(element) == false) {
                         ustensileArray.push(element);
                     }
-                    recette.classList.add(element.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e"));
+                    recette.classList.add(element.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e").replace(/â/g, "a"));
                 });
                 
                 //creation indications
@@ -113,9 +113,9 @@ function pageIndex() {
             let filtre_tag_ingredient = document.querySelector(".filtre_tag_ingredient");
             ingredientsArray.forEach(element => {
                 let filtre_tag_ingredient_li = document.createElement("li");
-                filtre_tag_ingredient_li.classList.add("filtre_tag_ingredient_li", "filtre_tag_li", "ingredient", element.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e"));
+                filtre_tag_ingredient_li.classList.add("filtre_tag_ingredient_li", "filtre_tag_li", "ingredient", element.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e").replace(/â/g, "a"));
                 filtre_tag_ingredient_li.innerHTML = element;
-                filtre_tag_ingredient_li.setAttribute("data-filter", element.replace(/['\s%\s(\s)]/g, ""));
+                filtre_tag_ingredient_li.setAttribute("data-filter", element.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e").replace(/â/g, "a"));
                 filtre_tag_ingredient.appendChild(filtre_tag_ingredient_li);
             });
 
@@ -123,9 +123,9 @@ function pageIndex() {
             let filtre_tag_appareil = document.querySelector(".filtre_tag_appareil");
             appareilArray.forEach(element => {
                 let filtre_tag_appareil_li = document.createElement("li");
-                filtre_tag_appareil_li.classList.add("filtre_tag_appareil_li", "filtre_tag_li", "appareil", element.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e"));
+                filtre_tag_appareil_li.classList.add("filtre_tag_appareil_li", "filtre_tag_li", "appareil", element.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e").replace(/â/g, "a"));
                 filtre_tag_appareil_li.innerHTML = element;
-                filtre_tag_appareil_li.setAttribute("data-filter", element.replace(/['\s%\s(\s)]/g, ""));
+                filtre_tag_appareil_li.setAttribute("data-filter", element.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e").replace(/â/g, "a"));
                 filtre_tag_appareil.appendChild(filtre_tag_appareil_li);
             });
 
@@ -133,9 +133,9 @@ function pageIndex() {
             let filtre_tag_ustensile = document.querySelector(".filtre_tag_ustensile");
             ustensileArray.forEach(element => {
                 let filtre_tag_ustensile_li = document.createElement("li");
-                filtre_tag_ustensile_li.classList.add("filtre_tag_ustensile_li", "filtre_tag_li", "ustensile", element.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e"));
+                filtre_tag_ustensile_li.classList.add("filtre_tag_ustensile_li", "filtre_tag_li", "ustensile", element.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e").replace(/â/g, "a"));
                 filtre_tag_ustensile_li.innerHTML = element;
-                filtre_tag_ustensile_li.setAttribute("data-filter", element.replace(/['\s%\s(\s)]/g, ""));
+                filtre_tag_ustensile_li.setAttribute("data-filter", element.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e").replace(/â/g, "a"));
                 filtre_tag_ustensile.appendChild(filtre_tag_ustensile_li);
             });
             new Tag().ajoutTag();
