@@ -13,7 +13,7 @@ export default class FiltreRecherche {
             recette.forEach(element => {
                 let elementclasses = element.classList.value;
                 let classes = elementclasses.split(" ");
-                let resultRecherche = filtreTexte(classes, barreRecherche.value.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e"));
+                let resultRecherche = filtreTexte(classes, barreRecherche.value.replace(/['\s%\s(\s)]/g, "").replace(/é/g, "e").replace(/è/g, "e").replace(/â/g, "a"));
                 if (resultRecherche.length > 0) {
                     element.style.display = "block";
                     element.classList.add("actifrecherche");
