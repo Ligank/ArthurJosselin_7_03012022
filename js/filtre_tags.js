@@ -2,7 +2,9 @@ import FiltreRechercheTags from "./filtre_recherche_tags.js";
 export default class FiltreTags {
     //Choix du filtre-------------------------------------------------------------------
     filtreTag() {
-        let recette = document.querySelectorAll(".recette");
+        let recette = document.querySelectorAll(".actifrecherche");
+        
+        
     
         document.querySelector(".filtre_tag_ingredient").addEventListener("click", event => {
         
@@ -39,7 +41,6 @@ export default class FiltreTags {
         filtreActives.forEach(function(filtreActives) {
             filtreSelection.push(filtreActives.getAttribute("data-filter"));
         });
-    
         return filtreSelection;
     }
 
@@ -51,7 +52,6 @@ export default class FiltreTags {
         let intersection = filtres.filter(
             x => classes.includes(x)
         );
-
         return filtres.length == intersection.length;
     }
 
@@ -60,10 +60,10 @@ export default class FiltreTags {
         recette.forEach((article) => {
             if (this.comparaisonFiltres(article)) {
                 article.style.display = "block";
-                article.classList.add("actifrecherche");
+                article.classList.add("actifrecherche2");
             } else {
                 article.style.display = "none";
-                article.classList.remove("actifrecherche");
+                article.classList.remove("actifrecherche2");
             }
             new FiltreRechercheTags().cacherTag();
         });

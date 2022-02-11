@@ -23,7 +23,7 @@ function pageIndex() {
                 //Creation contenant
                 let recette = document.createElement("a");
                 recette.classList.add("recette");
-                recette.classList.add(element.name.replace(/['\s%\s(\s)]/g, ""));
+                recette.classList.add(element.name.replace(/['\s%\s(\s)]/g, ""), "actifrecherche");
                 recette.href = "index.html";
 
                 //insertion

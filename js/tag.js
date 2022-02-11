@@ -2,6 +2,7 @@
 import RechercheTag from "./recherche_tags.js";
 import FiltreRechercheTags from "./filtre_recherche_tags.js";
 import FiltreTag from "./filtre_tags.js";
+import FiltreRecherche from "./filtre_recherche.js";
 
 export default class Tag {
     ajoutTag() {
@@ -41,7 +42,6 @@ export default class Tag {
                     tag_ustensile.appendChild(ustensileNom);
                     tag_selectionne.appendChild(tag_ustensile);
                 }
-
                 new FiltreTag().filtreTag();
 
                 //Retrait du tag et réapparition dans la liste
@@ -52,9 +52,10 @@ export default class Tag {
                         tag_inactif.style.display = "block";
                         tag_inactif.classList.remove("actif");
                         new FiltreTag().filtreTag();
+                        new FiltreRecherche().filtreRecherche();
                         if (typeof(item.parentElement.parentElement) != "undefined" && item.parentElement.parentElement != null) {
-                            //item.parentElement.parentElement.parentElement.removeChild(item.parentElement.parentElement);
-                            item.parentElement.parentElement.style.display = "none";
+                            item.parentElement.parentElement.parentElement.removeChild(item.parentElement.parentElement);
+                            //item.parentElement.parentElement.style.display = "none";
                         }
                         new FiltreRechercheTags().cacherTag();
                     });
